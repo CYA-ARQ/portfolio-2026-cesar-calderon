@@ -15,6 +15,9 @@ import {
 
 const PAGE_COUNT = 34
 const BASE_URL = import.meta.env.BASE_URL
+const PDF_URL = window.location.hostname.endsWith('github.io')
+  ? 'https://media.githubusercontent.com/media/CYA-ARQ/portfolio-2026-cesar-calderon/main/public/Cesar-Calderon-Portfolio-2026.pdf'
+  : `${BASE_URL}Cesar-Calderon-Portfolio-2026.pdf`
 const MIN_ZOOM = 1
 const MAX_ZOOM = 2.5
 const ZOOM_STEP = 0.25
@@ -634,7 +637,7 @@ function App() {
             <span>SONIDO DE PÁGINA</span>
             <strong>{soundEnabled ? 'ACTIVO' : 'INACTIVO'}</strong>
           </button>
-          <a className="download-link" href={`${BASE_URL}Cesar-Calderon-Portfolio-2026.pdf`} download>
+          <a className="download-link" href={PDF_URL} download>
             <Download aria-hidden="true" />
             <span>DESCARGAR PDF</span>
           </a>
